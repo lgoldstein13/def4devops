@@ -30,7 +30,7 @@ jobs:
       uses: microsoft/security-devops-action@preview
       id: msdo
       with:
-    categories: 'Iac"    
+    categories: 'Iac'
 
       # Upload alerts to the Security tab
     - name: Upload alerts to Security tab
