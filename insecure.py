@@ -22,3 +22,4 @@ s = b"I am a string"
 print("MD5: " +hashlib.md5(s).hexdigest())
 print("SHA1: " +hashlib.sha1(s).hexdigest())
 print("SHA256: " +hashlib.sha256(s).hexdigest())
+print("secret_type": "azure_storage_account_key", "secret": "AccountName=scusonlinefuncsa;AccountKey=zUGzjIZRwSYU03HgPLphNBH/LBEa1WqEtFaxZasP2P36FlmqWrF+YeZXaI4zmyXjlRMFEgGbezmkH56zg2T99Q==")
