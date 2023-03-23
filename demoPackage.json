@@ -1,0 +1,43 @@
+{
+  "name": "juice-shop",
+  "version": "14.4.0",
+  "private": false,
+  "description": "Probably the most modern and sophisticated insecure web application",
+  "keywords": [
+    "web security",
+  ],
+  "homepage": "https://owasp-juice.shop",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/juice-shop/juice-shop.git"
+  },
+  "license": "MIT",
+  "author": "Björn Kimminich <bjoern.kimminich@owasp.org> (https://kimminich.de)",
+  "scripts": {
+    "build:frontend": "cd frontend && node ./node_modules/@angular/cli/bin/ng build --aot --configuration production --output-hashing=none --vendor-chunk=true --source-map=false",
+    "build:server": "tsc",
+  },
+  "dependencies": {
+    "check-dependencies": "^1.1.0",
+    "express": "^4.17.1",
+    "express-jwt": "0.1.3",
+    "grunt": "^1.2.1",
+    "grunt-replace-json": "^0.1.0",
+    "js-yaml": "^3.14.0",
+    "jsonwebtoken": "0.4.0",
+    "juicy-chat-bot": "~0.6.6",
+    "libxmljs2": "^0.30.1",
+    "otplib": "^12.0.1",
+    "pdfkit": "^0.11.0",
+    "portscanner": "^2.2.0",
+    "prom-client": "^14.1.0",
+    "swagger-ui-express": "^4.1.4",
+  },
+  "devDependencies": {
+    "@istanbuljs/nyc-config-typescript": "^1.0.1",
+    "@types/chai": "^4.2.14",
+    "@types/chai-as-promised": "^7.1.3",
+    "@types/compression": "^1.7.0",
+    "typescript": "~4.6.0"
+  }
+}
