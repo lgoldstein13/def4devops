@@ -1,3 +1,5 @@
+
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -20,5 +22,7 @@ spec:
           resources:
             limits:
               cpu: 0.5
+              memory: 5G
             requests:
               cpu: 0.2
+              memory: 1G
