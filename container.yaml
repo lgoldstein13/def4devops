@@ -1,5 +1,11 @@
 
-
+            # Add the following lines
+            resources:
+              limits:
+                cpu: "2"
+      # End
+      restartPolicy: Always
+ 
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -21,3 +27,9 @@ spec:
             - containerPort: 80
           securityContext:
             allowPrivilegeEscalation: false
+            # Add the following lines
+            resources:
+              limits:
+                cpu: "2"
+        # End
+      restartPolicy: Always
