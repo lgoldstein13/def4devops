@@ -1,5 +1,6 @@
+ should be added to the config file in order to fix the error.
 
-
-Solution:
+Example:
 
 memory: 128Mi
+memoryRequest: 128Mi
