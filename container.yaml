@@ -1,5 +1,3 @@
-
-
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -17,8 +15,5 @@ spec:
       containers:
         - name: my-nginx
           image: nginx
-          resources:
-            limits:
-              cpu: 500m
           ports:
             - containerPort: 80
