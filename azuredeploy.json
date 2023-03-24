@@ -50,7 +50,8 @@
       "kind": "linux",
       "properties": {
         "reserved": true,
-        "tlsVersion": "1.2"
+        "tlsVersion": "1.2",
+        "ftpsState": "AllAllowed"
       }
     },
     {
