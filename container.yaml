@@ -1,4 +1,5 @@
-apiVersion: apps/v1
+ to 
+'apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: my-nginx
@@ -14,6 +15,52 @@ spec:
     spec:
       containers:
         - name: my-nginx
-          image: nginx
+          image: nginx:latest
           ports:
             - containerPort: 80
+          resources:
+            requests:
+              cpu: 1m
+            limits:
+              cpu: 2m',
+    'memoryTest': "after"
+}
+exo_13 = {
+    'input': r'''
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+spec:
+  selector:
+    matchLabels:
+      name: my-backend
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        name: my-backend
+    spec:
+      containers:
+        - name: my-backend
+          image: my-nginx:latest
+          env:
+          - name: REDIS_DB_ADDRESS
+            value: '172.17.0.10'
+          - name: REDIS_DB_PORT
+            value: '1234'
+          - name: MYSQL_DB_ADDRESS
+            value: 'localhost'
+          - name: MYSQL_DB_PORT
+            value: '8443'
+          - name: REDIS_KEY
+            value: 'mykey'
+''',
+    'output': 'apiVersion: apps/v1\nkind: Deployment\nmetadata:\n  name: backend\nspec:\n  selector:\n    matchLabels:\n      name: my-backend\n  replicas: 2\n  template:\n    metadata:\n      labels:\n        name: my-backend\n    spec:\n      containers:...: \n              value: \'172.17.0.10\'\n            - name: REDIS_DB_PORT\n              value: \'1234\'\n            - name: MYSQL_DB_ADDRESS\n              value: \'localhost\'\n            - name: MYSQL_DB_PORT\n              value: \'8443\'\n',
+    'memoryTest': "after"
+}
+main_test = {
+    'input': '',
+    'output': '',
+    'memoryTest': 'no'
+}<|im_sep|>
