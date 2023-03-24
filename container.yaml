@@ -1,5 +1,7 @@
-
-
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-nginx
 spec:
   selector:
     matchLabels:
@@ -15,5 +17,3 @@ spec:
           image: nginx
           ports:
             - containerPort: 80
-          securityContext:
-            allowPrivilegeEscalation: false
