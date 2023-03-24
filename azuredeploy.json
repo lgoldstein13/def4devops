@@ -1,3 +1,5 @@
+
+
 {
   "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
@@ -47,7 +49,8 @@
       },
       "kind": "linux",
       "properties": {
-        "reserved": true
+        "reserved": true,
+        "tlsVersion": "1.2"
       }
     },
     {
@@ -62,7 +65,8 @@
       "properties": {
         "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', variables('appServicePlanName'))]",
         "siteConfig": {
-          "linuxFxVersion": "[parameters('linuxFxVersion')]"
+          "linuxFxVersion": "[parameters('linuxFxVersion')]",
+          "minTlsVersion":"1.2"
         }
       }
     }
