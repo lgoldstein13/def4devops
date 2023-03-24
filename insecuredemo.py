@@ -1,4 +1,5 @@
-xs=[1,2,3,4,5,6,7,8]
+
+
 try:
     print(xs[7])
     print(xs[8])
@@ -10,6 +11,7 @@ for y in ys:
     except: continue #not how to handle them
 
 #some imports
+import hashlib
 import telnetlib
 import ftplib
 
