@@ -1,25 +1,6 @@
- 
 
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: my-nginx
-spec:
-  selector:
-    matchLabels:
-      run: my-nginx
-  replicas: 2
-  template:
-    metadata:
-      labels:
-        run: my-nginx
-    spec:
-      containers:
-        - name: my-nginx
-          image: nginx
-          ports:
-            - containerPort: 80
-          resources:
-            limits:
-              cpu: "1"
-            memory: "128Mi" # added code
+
+          imagePullPolicy: "IfNotPresent" # added code
+          imageDigest: <digest-value> # added code
+          securityContext: # added code
+            privileged: true # added code
